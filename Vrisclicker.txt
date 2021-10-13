@@ -7,12 +7,10 @@ Let's make a game!
 	version:1.0
 
 Settings
-
-	background:
+	background:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/background.png
 	building cost increase:108%
 	building cost refund:88%
-
-	spritesheet:icons, 48 by 48, https://
+	spritesheet:icons, 48 by 48, https://raw.githubusercontent.com/Morphimus/vrisclicker/main/icons.png
 
 Layout
 	use default
@@ -20,10 +18,10 @@ Layout
 Buttons
 	*luckButton
 		name:Generate Luck
-		desc:Click to make all the luck! ALL OF IT!!!!!!!!
+		desc:Click to m8ke all the luck! ALL OF IT!!!!!!!!
 		on click:anim icon wobble
 		on click:yield 1 luck
-		icon:https://
+		icon:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/luck.png
 		no text
 		class:bigButton hasFlares
 		icon class:shadowed
@@ -34,10 +32,9 @@ Resources
 	*luck
 		name:Luck|Luck
 		desc:How much luck you've got.
-		icons:icons[0,1]
+		icons:icons[0,1] icons[1,2]
 		class:noBackground
 		show earned
-		
 
 	*boondollar|boondollars
 		name:Boondollar|Boondollars
@@ -52,17 +49,37 @@ Shinies
 	*aradiaTimeskip
 		on click:log Woop
 		movement:onRight moveLeft
-		frequency: 100
-		frequency variation: 75
-		req:1000 luck:earned
-		icon: https://
-		
+		frequency: 10
+		frequency variation: 5
+		req:10 luck:earned
+		icon:icons[2,2]
+		class:bigButton
+		on click:
+			$boost=1
+			if (chance(25%))
+				$amount=max(7,random(luck:ps*60*1,luck:ps*60*3))*$boost
+				toast Aradia the lucky bunny grants you<//><b>[$amount] luck</b>.
+				yield $amount luck
+			else
+				$amount=1*$boost
+				toast Aradia the lucky bunny grants you<//><b>[$amount] boondollar[s?$amount]</b>!
+				yield $amount boondollars
+			end
+		end
 
 	*cobaltPotion
 		on click:log Woop
 		movement:OnLeft moveRight
 		frequency: 60
 		frequency variation: 30
+		icon:icons[2,1]
+		class:bigButton
+			$boost=4
+			$amount=max(8,random(luck:ps*60*1,luck:ps*60*8))*$boost
+			toast Ugh, gross........ But you gained<//><b>[$amount] luck</b>.
+			yield $amount luck
+			end
+		end
 		
 Buildings
 	*TEMPLATE
@@ -71,7 +88,7 @@ Buildings
 	*eightball|eightballs
 		name:Magic 8-ball|Magic 8-balls
 		desc:You like to break these open sometimes.<//><b>Effect:</b><.>Produces 1 luck every 8 seconds.
-		icon:icons[1,1]
+		icon:icons[2,0]
 		cost:8 luck
 		on tick:yield 0.134 luck
 		req:1 luck:earned
@@ -79,7 +96,7 @@ Buildings
 	*chump|chumps
 		name:Mind controlled chump|Mind controlled chumps
 		desc:Idiots that you exert your will over.<//><b>Effect:</b><.>Produces 1 boondollar every 10 seconds.
-		icon:icons[1,2]
+		icon:icons[2,1]
 		cost:88 luck
 		on tick:yield 0.1 boondollars
 		req:mindControl
@@ -88,22 +105,38 @@ Upgrades
 	*TEMPLATE
 		on click:anim glow
 
+	//building upgrades
+
 	*mindControl
 		name:Mind Control
 		desc:Your mind is miiiiiiiine!!!!!!!!<//><b>Effect:</b><.>Unlocks resource generators.
+		icon:icons[0,0]
+		cost:8 luck
+		req:8 luck:earned
 
 	*stockExchange
 		name:LOMAT Stock Exchange
 		desc:Manipul8ing dum8 consorts has never 8een easier.<//><b>Effect:</b><.>Multiply Boondollar production by 8!!!!!!!!.
+		icon:icons[0,2] icons[1,1]
 		passive:multiply yield of boondollars by 8
+		cost:10 boondollars
+		req:5 boondollars:earned
 
 	//luck upgrades
 
 	*badBreak
 		name:8ad 8r8k
 		desc:Just my luck.<//><b>Effect:</b><.>Increases passive luck generation by like a fuckton, but makes active clicking almost worthless.
+		icon:icons[2,0] icons[0,0]
 		passive:multiply yield of luck by 800
 		passive:multiply luck yield of luckButton by 0.0001
+		cost:800 luck, 20 boondollars
+		req:500 luck:earned
 
-
+Achievements
+	*achieveVriska
+		name:Vriska!
+		desc:Welcome to the 8ullshit.
+		req:1 luck
+		icon:icons[2,1] icons[0,0]
 
