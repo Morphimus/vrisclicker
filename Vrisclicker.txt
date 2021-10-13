@@ -32,14 +32,14 @@ Resources
 	*luck
 		name:Luck|Luck
 		desc:How much luck you've got.
-		icons:icons[0,1] icons[1,2]
+		icon:icons[0,1] icons[1,2]
 		class:noBackground
 		show earned
 
 	*boondollar|boondollars
 		name:Boondollar|Boondollars
 		desc:mad cash
-		icons:icons[0,2]
+		icon:icons[0,2]
 		class:noBackground
 		show earned
 		hidden when 0
