@@ -4,7 +4,7 @@ Let's make a game!
 	desc:vriska idle game lmao
 	created:10/13/2021
 	updated:10/13/2021
-	version:0.2
+	version:0
 
 Settings
 	background:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/background.png
@@ -27,6 +27,7 @@ Layout
 			contains:BulkDisplay, Buildings
 			header:Generators
 			tooltip origin:left
+			ps:show
 		*upgrades
 			contains:Upgrades
 			header:Upgrades
@@ -142,5 +143,5 @@ Achievements
 		name:Vriska!
 		desc:Welcome to the 8ullshit.
 		req:1 luck
-		icon:icons[2,1] icons[0,0]
+		icon:icons[0,0] icons[2,1]
 
