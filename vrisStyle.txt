@@ -89,7 +89,7 @@
 }
 .thing:hover,.thing.lit
 {
-	background:#07e;
+	background:#004182;
 }
 .thing.cantAfford
 {
@@ -103,10 +103,6 @@
 .upgrade.cantAfford:hover
 {
 	box-shadow:0px 0px 4px #6cf;
-}
-.upgrade.owned,.achiev.owned
-{
-	background:#6cf;
 }
 .thing-text,.thing-costs{font-weight:bold;}
 
