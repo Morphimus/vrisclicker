@@ -4,13 +4,14 @@ Let's make a game!
 	desc:vriska idle game lmao
 	created:10/13/2021
 	updated:10/13/2021
-	version:1.0
+	version:0.2
 
 Settings
 	background:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/background.png
 	building cost increase:108%
 	building cost refund:88%
 	spritesheet:icons, 48 by 48, https://raw.githubusercontent.com/Morphimus/vrisclicker/main/icons.png
+	stylesheet:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/vrisStyle.txt
 
 Layout
 	use default
