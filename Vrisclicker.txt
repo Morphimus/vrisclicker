@@ -1,0 +1,109 @@
+Let's make a game!
+	name:Vrisclicker
+	by:Morphimus
+	desc:vriska idle game lmao
+	created:10/13/2021
+	updated:10/13/2021
+	version:1.0
+
+Settings
+
+	background:
+	building cost increase:108%
+	building cost refund:88%
+
+	spritesheet:icons, 48 by 48, https://
+
+Layout
+	use default
+
+Buttons
+	*luckButton
+		name:Generate Luck
+		desc:Click to make all the luck! ALL OF IT!!!!!!!!
+		on click:anim icon wobble
+		on click:yield 1 luck
+		icon:https://
+		no text
+		class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:top
+		tooltip class:red
+
+Resources
+	*luck
+		name:Luck|Luck
+		desc:How much luck you've got.
+		icons:icons[0,1]
+		class:noBackground
+		show earned
+		
+
+	*boondollar|boondollars
+		name:Boondollar|Boondollars
+		desc:mad cash
+		icons:icons[0,2]
+		class:noBackground
+		show earned
+		hidden when 0
+		
+
+Shinies
+	*aradiaTimeskip
+		on click:log Woop
+		movement:onRight moveLeft
+		frequency: 100
+		frequency variation: 75
+		req:1000 luck:earned
+		icon: https://
+		
+
+	*cobaltPotion
+		on click:log Woop
+		movement:OnLeft moveRight
+		frequency: 60
+		frequency variation: 30
+		
+Buildings
+	*TEMPLATE
+		on click:anim glow
+
+	*eightball|eightballs
+		name:Magic 8-ball|Magic 8-balls
+		desc:You like to break these open sometimes.<//><b>Effect:</b><.>Produces 1 luck every 8 seconds.
+		icon:icons[1,1]
+		cost:8 luck
+		on tick:yield 0.134 luck
+		req:1 luck:earned
+
+	*chump|chumps
+		name:Mind controlled chump|Mind controlled chumps
+		desc:Idiots that you exert your will over.<//><b>Effect:</b><.>Produces 1 boondollar every 10 seconds.
+		icon:icons[1,2]
+		cost:88 luck
+		on tick:yield 0.1 boondollars
+		req:mindControl
+
+Upgrades
+	*TEMPLATE
+		on click:anim glow
+
+	*mindControl
+		name:Mind Control
+		desc:Your mind is miiiiiiiine!!!!!!!!<//><b>Effect:</b><.>Unlocks resource generators.
+
+	*stockExchange
+		name:LOMAT Stock Exchange
+		desc:Manipul8ing dum8 consorts has never 8een easier.<//><b>Effect:</b><.>Multiply Boondollar production by 8!!!!!!!!.
+		passive:multiply yield of boondollars by 8
+
+	//luck upgrades
+
+	*badBreak
+		name:8ad 8r8k
+		desc:Just my luck.<//><b>Effect:</b><.>Increases passive luck generation by like a fuckton, but makes active clicking almost worthless.
+		passive:multiply yield of luck by 800
+		passive:multiply luck yield of luckButton by 0.0001
+
+
+
