@@ -74,7 +74,7 @@ Shinies
 		frequency variation: 30
 		icon:icons[2,1]
 		class:bigButton
-			$boost=4
+			$boost=1
 			$amount=max(8,random(luck:ps*60*1,luck:ps*60*8))*$boost
 			toast Ugh, gross........ But you gained<//><b>[$amount] luck</b>.
 			yield $amount luck
