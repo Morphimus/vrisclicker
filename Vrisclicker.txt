@@ -276,7 +276,7 @@ Upgrades
 		cost:100000 luck
 		req:1000 luckButton clicks, advance2
 
-	*advance3
+	*advance4
 		name:Repetetive strain injury
 		desc:Don't hurt your hand, seriously!<//><b>Effect:</b><.>Multiplies luck gained from the luck button by 100.
 		icon:icons[7,0]
