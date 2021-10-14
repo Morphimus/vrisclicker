@@ -111,6 +111,7 @@ Buildings
 		desc:You like to break these open sometimes.<//><b>Effect:</b><.>Produces 1 luck every 8 seconds.
 		icon:icons[3,0]
 		cost:8 luck
+		cost increase:108%
 		on tick:yield 0.134 luck
 		req:1 luck:earned
 
@@ -138,6 +139,15 @@ Buildings
 		on tick:yield 0.01 boondollars
 		req:mindControl
 
+	*fraymotif|fraymotifs
+		name:Fraymotif|Fraymotifs
+		desc:Battle tactics bought from consorts<//><b>Effect:</b><.>Produces 1000 luck per second.
+		icon:icons[2,0] icons[0,0]
+		cost:800 boondollars
+		cost increase:112%
+		on tick:yield 1000 luck
+		req:413 boondollars:earned
+
 Upgrades
 	*TEMPLATE
 		on click:anim glow
@@ -155,7 +165,7 @@ Upgrades
 
 	*eightballUpgrade2
 		name:8-balls everywhere!
-		desc:Your hive is absolutely lousy with the things<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
+		desc:Your hive is absolutely lousy with the things.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
 		icon:icons[4,5] icons[3,0]
 		passive:multiply luck yield of eightballs by 2
 		cost:800 luck
@@ -163,11 +173,35 @@ Upgrades
 
 	*eightballUpgrade3
 		name:This might 8e too m8ny 8-8alls.
-		desc:Running out of room to put them<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
+		desc:Running out of room to put them.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
 		icon:icons[4,6] icons[3,0]
 		passive:multiply luck yield of eightballs by 2
 		cost:80000 luck
 		req:40000 luck:earned, eightballUpgrade2
+
+	*eightballUpgrade4
+		name:8-ballin'
+		desc:You have stuffed 8-balls into as many chests on this meteor as you can, and yet you still need more room!<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 4!
+		icon:icons[4,7] icons[3,0]
+		passive:multiply luck yield of eightballs by 4
+		cost:800000 luck
+		req:400000 luck:earned, eightballUpgrade3
+
+	*eightballUpgrade5
+		name:8 times the 8-balls!
+		desc:My favor8 num8er! ::::)<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 8!!!!!!!!
+		icon:icons[4,2] icons[4,4] icons[3,0]
+		passive:multiply luck yield of eightballs by 8
+		cost:8000000 luck, 1 spotlight
+		req:4000000 luck:earned, eightballUpgrade4, 1 spotlight:earned
+
+	*eightballUpgrade6
+		name:Crazy 8s
+		desc:You're cr8zy for them.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 8!!!!!!!!
+		icon:icons[4,2] icons[4,5] icons[3,0]
+		passive:multiply luck yield of eightballs by 8
+		cost:80000000 luck, 10 spotlight
+		req:40000000 luck:earned, eightballUpgrade5, 10 spotlight:earned
 
 	*diceUpgrade1
 		name:Roll the dice!
@@ -185,9 +219,17 @@ Upgrades
 		cost:88888 luck
 		req:40000 luck:earned, diceUpgrade1
 
+	*diceUpgrade3
+		name:Keep rollin' rollin' rollin' rollin'
+		desc:The more rolls I get the more goals are met!<//><b>Effect:</b><.>Multiplies luck gained from dice by 2.
+		icon:icons[4,6] icons[3,1]
+		passive:multiply luck yield of dice by 2
+		cost:888888 luck
+		req:400000 luck:earned, diceUpgrade2
+
 	*baitUpgrade1
 		name:Like bleatbeasts to the slaughter.
-		desc:Damn, why she gotta eat so many trolls tho.<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
+		desc:Damn, she eats so many trolls........<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
 		icon:icons[4,4] icons[2,2]
 		passive:multiply luck yield of spiderbait by 2
 		cost:800000 luck
@@ -200,7 +242,7 @@ Upgrades
 		cost:1000 luck
 		req:1000 luck:earned
 
-	*stockExchange
+	*stockExchange1
 		name:LOMAT Stock Exchange
 		desc:Manipul8ing dum8 consorts has never 8een easier.<//><b>Effect:</b><.>Multiply chumps' Boondollar production by 8!!!!!!!!.
 		icon:icons[4,3] icons[2,1]
@@ -208,30 +250,72 @@ Upgrades
 		cost:1 boondollar, 8888 luck
 		req:1 boondollars:earned
 
+	//click upgrades//
+
+	*advance1
+		name:Arrow candy
+		desc:Let's go to the next page, shall we?<//><b>Effect:</b><.>Makes clicking the luck button much more lucative. 4 points more lucrative, in fact.
+		icon:icons[7,0]
+		passive:increase luck yield of luckButton by 4
+		cost:50 luck
+		req:50 luckButton clicks
+
+	*advance2
+		name:More arrows
+		desc:Another page another wage.<//><b>Effect:</b><.>Doubles the luck gained from the luck button.
+		icon:icons[7,0]
+		passive:multiply luck yield of luckButton by 2
+		cost:1000 luck
+		req:500 luckButton clicks, advance1
+
+	*advance3
+		name:Yet another arrow
+		desc:What new batch of fortuity awaits us on the next page?<//><b>Effect:</b><.>Multiplies luck gained from the luck button by 10.
+		icon:icons[7,0]
+		passive:multiply luck yield of luckButton by 10
+		cost:100000 luck
+		req:1000 luckButton clicks, advance2
+
+	*advance3
+		name:Repetetive strain injury
+		desc:Don't hurt your hand, seriously!<//><b>Effect:</b><.>Multiplies luck gained from the luck button by 100.
+		icon:icons[7,0]
+		passive:multiply luck yield of luckButton by 100
+		cost:10000000 luck
+		req:1500 luckButton clicks, advance3
+
 
 	//production upgrades//
 
 	*beginnersLuck
 		name:Beginner's luck
-		desc:Lucky!<//><b>Effect:</b><.>Multiplies passive luck generation by 1.5.
+		desc:Lucky!<//><b>Effect:</b><.>Multiplies all luck generation by 1.5.
 		icon:icons[2,0]
 		passive:multiply yield of luck by 1.5
 		cost:1000 luck
 		req:500 luck:earned
+
+	*luckyBreak
+		name:Lucky 8r8k
+		desc:So much luck I am downright drowning in it.<//><b>Effect:</b><.>Double all luck generation.
+		icon:icons[2,0]
+		passive:multiply yield of luck by 2
+		cost:1800000 luck
+		req:1000000 luck:earned
 
 	*badBreak
 		name:8ad 8r8k
 		desc:Just my luck. ::::(<//><b>Effect:</b><.>Increases passive luck generation by like a fuckton, but makes active clicking almost worthless.
 		icon:icons[2,0] icons[0,0]
 		passive:multiply yield of luck by 800
-		passive:multiply luck yield of luckButton by 0.001
+		passive:multiply luck yield of luckButton by 0.000001
 		cost:88888888 luck, 888888 boondollars
 		req:50000000 luck:earned
 
 	//Misc. upgrades//
 
 	*egbert1
-		name:Mess with Egbert
+		name:Mess with John
 		desc:8luh 8luh huge dork!
 		icon:icons[1,13]
 		cost:413 luck, 10 boondollars
@@ -250,7 +334,8 @@ Upgrades
 		icon:icons[5,5] icons[1,13]
 		on tick:yield 0.0167 spotlight
 		cost:413612 luck, 1000 boondollars
-		req:egbert1, 300000 luck:earned
+		req:egbert2, 300000 luck:earned
+		//Note to self: make it so that instead of just giving you the spotlight, June shows up as a shiny you have to click for it.//
 
 Achievements
 	*achieveVriska
