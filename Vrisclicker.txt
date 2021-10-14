@@ -507,7 +507,7 @@ Upgrades
 		icon:icons[1,1] icons[0,1]
 		cost:100 spotlight
 		req:200 spotlight:earned
-s
+
 Achievements
 	*achieveVriska
 		name:Vriska!
