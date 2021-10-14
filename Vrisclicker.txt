@@ -235,7 +235,7 @@ Upgrades
 		desc:8luh 8luh huge dork!
 		icon:icons[1,13]
 		cost:413 luck, 10 boondollars
-		req:1000 luck, 1 boondollar
+		req:1000 luck:earned, 1 boondollar:earned
 
 	*egbert2
 		name:I'm June now.
