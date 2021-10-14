@@ -91,7 +91,7 @@ Shinies
 		icon:icons[7,0] icons[0,1]
 		on click:
 			$boost=1
-			if (have aradiaBoost) $boost=4
+			if (have aradiaBoost) $boost=8
 			if (chance(50%))
 				$amount=max(7,random(luck:ps*60*1,luck:ps*60*5))*$boost
 				toast Aradia does weird time shit, which ends up netting you<//><b>[$amount] luck</b>.
@@ -116,8 +116,8 @@ Buildings
 		on tick:yield 0.134 luck
 		req:1 luck:earned
 
-	*d8s|dice
-		name:D8s|Dice
+	*dice|d8s
+		name:Dice|D8s
 		desc:Roll the dice!!!!!!!!<//><b>Effect:</b><.>Produces 1 luck per second.
 		icon:icons[3,1]
 		cost:88 luck
@@ -132,8 +132,17 @@ Buildings
 		on tick:yield 20 luck
 		req:80000 luck:earned, mindControl
 
+	*page|pages
+		name:Mindfang's Journal|Journal pages
+		desc:On the 14th 8ilunar perigee of the 2nd dim season's equinox........<//><b>Effect:</b><.>Produces 100 luck per second.
+		icon:icons[3,3] icons[0,8]
+		cost:1000000 luck
+		cost increase:101%
+		on tick:yield 100 luck
+		req:10000000 luck:earned
+
 	*chump|chumps
-		name:Mind controlled chump|Mind controlled chumps
+		name:Mind controlled chumps|Chumps
 		desc:Idiots that you exert your will over.<//><b>Effect:</b><.>Produces 1 boondollar every 100 seconds.
 		icon:icons[4,8] icons[2,1]
 		cost:8000 luck
@@ -225,9 +234,9 @@ Upgrades
 
 	*eightballUpgrade8
 		name:Ultimate 8-balls
-		desc:The pinnacle of 8-ball power... Or is it?<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 80!!!!!!!! Wow!
+		desc:The pinnacle of 8-ball power... Or is it?<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 808!!!!!!!! Wow!
 		icon:icons[4,2] icons[4,7] icons[3,0]
-		passive:multiply luck yield of eightballs by 80
+		passive:multiply luck yield of eightballs by 808
 		cost:80000000000 luck, 80 spotlight
 		req:40000000000 luck:earned, eightballUpgrade7, 50 spotlight:earned
 
@@ -268,7 +277,7 @@ Upgrades
 		desc:That's a lot of 8s........<//><b>Effect:</b><.>Multiplies luck gained from dice by 8!!!!!!!!
 		icon:icons[4,2] icons[4,4] icons[3,1]
 		passive:multiply luck yield of dice by 8
-		cost:88888888 luck, 10 spotlight
+		cost:88888888 luck, 8 spotlight
 		req:40000000 luck:earned, diceUpgrade4, 10 spotlight:earned
 
 	*diceUpgrade6
@@ -279,13 +288,29 @@ Upgrades
 		cost:888888888 luck, 20 spotlight
 		req:400000000 luck:earned, diceUpgrade5, 100 spotlight:earned
 
+	*diceUpgrade7
+		name:Buckets of dice
+		desc:Get your mind out of the gutter!!!!!!!!<//><b>Effect:</b><.>Multiplies luck gained from dice by 8!!!!!!!!
+		icon:icons[4,2] icons[4,6] icons[3,1]
+		passive:multiply luck yield of dice by 8
+		cost:8888888888 luck, 80 spotlight
+		req:4000000000 luck:earned, diceUpgrade6
+
+	*diceUpgrade8
+		name:ALL THE D8s! ALL OF THEM!
+		desc:The final dice upgr8de.<//><b>Effect:</b><.>Multiplies luck gained from dice by 88!!!!!!!!
+		icon:icons[4,2] icons[4,7] icons[3,1]
+		passive:multiply luck yield of dice by 88
+		cost:88888888888 luck, 160 spotlight
+		req:40000000000 luck:earned, diceUpgrade7
+
 	*baitUpgrade1
 		name:Like bleatbeasts to the slaughter.
 		desc:Damn, she eats so many trolls........<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
 		icon:icons[4,4] icons[2,2]
 		passive:multiply luck yield of spiderbait by 2
 		cost:800000 luck
-		req:400000 luck:earned
+		req:400000 luck:earned, mindControl
 
 	*baitUpgrade2
 		name:Body pile
@@ -310,6 +335,22 @@ Upgrades
 		passive:multiply luck yield of spiderbait by 4
 		cost:800000000 luck
 		req:400000000 luck:earned, baitUpgrade3
+
+	*baitUpgrade5
+		name:Lusus lunch
+		desc:Feeding this 8itch is soooooooo annoying!<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 8!
+		icon:icons[4,2] icons[4,4] icons[2,2]
+		passive:multiply luck yield of spiderbait by 8
+		cost:8000000000 luck
+		req:4000000000 luck:earned, baitUpgrade4
+
+	pageUpgrade1
+		name:Calignous riddle
+		desc:The Orphaner poses a caliginous riddle like no other I've met. I am presuming him 8othered 8y jealousy, and it would 8e sickening if it were not so marvelously amusing. 8ut then, who 8ut royalty could have the finned cheek to show disdain for the manner in which his 8lack lover conducts her red conquests? Less has acceler8ted meeker than I to homicide, and the viol8tion would hold me aghast, again, if his misgivings did not complement his so endearing arsenal of qu8nt flaws. It is impossi8le to stifle this grin even now as I write. <//><b>Effect:</b><.>Multiplies luck gained from journal pages by 2.
+		icon:icons[4,4] icons[3,3]
+		passive:multiply luck yield of pages by 2
+		cost:80000000 luck
+		req:40000000 luck:earned
 
 	*chumpUpgrade1
 		name:LOMAT Stock Exchange
@@ -366,7 +407,7 @@ Upgrades
 		desc:Don't hurt your hand, seriously!<//><b>Effect:</b><.>Multiplies luck gained from the luck button by 100.
 		icon:icons[7,0]
 		passive:multiply luck yield of luckButton by 100
-		cost:10000000 luck, 10 spotlight
+		cost:10000000 luck, 1 spotlight
 		req:1025 luckButton clicks, advance3, 1 spotlight:earned
 
 	*advance5
@@ -375,7 +416,7 @@ Upgrades
 		icon:icons[7,0] icons[7,2]
 		passive:multiply luck yield of luckButton by 413
 		cost:100000000 luck, 32 spotlight
-		req:8123 luckButton clicks, advance4, 10 spotlight:earned
+		req:8123 luckButton clicks, advance4, 1 spotlight:earned
 
 	//production upgrades//
 
@@ -409,8 +450,17 @@ Upgrades
 		icon:icons[2,0] icons[0,0]
 		passive:multiply yield of luck by 800
 		passive:multiply luck yield of luckButton by 0.000001
-		cost:88888888 luck, 888888 boondollars
+		cost:8888888888 luck, 888888 boondollars
 		req:50000000 luck:earned
+
+	*spotlightUpgrade1
+		name:MeGaLoVania
+		desc:F8CK YEAH!!!!!!!!<//><b>Effect:</b><.>Multiplies spotlight generation by 8!!!!!!!!
+		icon:icons[2,2]
+		passive:multiply yield of spotlight by 8
+		cost:50 spotlight
+		req:500 spotlight:earned
+
 
 	//Misc. upgrades//
 
@@ -453,11 +503,11 @@ Upgrades
 
 	*aradiaBoost
 		name:Rel8tionship mended with Aradia
-		desc:All bridges can be rebuilt with time! Even ones you burnt down OuO<//><b>Effect:</b><.>Quintuple's Aradia's timeskip effectiveness.
+		desc:All bridges can be rebuilt with time! Even ones you burnt down OuO<//><b>Effect:</b><.>Octuples Aradia's timeskip effectiveness.
 		icon:icons[1,1] icons[0,1]
 		cost:100 spotlight
 		req:200 spotlight:earned
-
+s
 Achievements
 	*achieveVriska
 		name:Vriska!
