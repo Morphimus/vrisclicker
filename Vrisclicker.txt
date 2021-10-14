@@ -98,7 +98,7 @@ Shinies
 		movement:onRight moveLeft
 		frequency: 10
 		frequency variation: 70
-		req:10 luck:earned
+		req:1200 luck:earned
 		icon:icons[7,0] icons[0,1]
 		on click:
 			$boost=1
@@ -113,7 +113,12 @@ Shinies
 				yield $amount luck
 			end
 		end
-		
+
+	*egbertHand
+		movement:anywhere fade
+		frequency:10
+		icon:icons[1,13]
+
 Buildings
 	*TEMPLATE
 		on click:anim glow
@@ -412,7 +417,7 @@ Upgrades
 		req:400000000000 luck:earned, pageUpgrade4, 1 spotlight:earned
 
 	*pageUpgrade6
-		name:Wait this journal sucks actually
+		name:Aaaaaaaargh! So much text!
 		desc:I look again at the face of my slave, imagining for a moment her mind is not an unguarded port to her every dread. I imagine I cannot feel her conviction that it's not merely a matter of whether she will 8e put to the irons, 8ut how hot they will 8e if she fails to please. Poor thing. Her horns make attractive shapes and pair themselves pleasantly amidst her violent snarls of hair. Her fingers, which I have lost track of, to my surprise have come 8etween the petticoat and my skin. The heat of her touch tells me the likely range for the color of her 8lood. I wouldn't have guessed it to look at her, not with her sign stripped. Her mouth opens slightly and I squint. Ah! Razor sharp, and none missing. Perfect. How disappointing it is to find quivering lips hiding dull teeth. I pause to consider. What will her fear 8ecome if I choose to show her mercy later? And even, in days, kindness? Will this 8e the red dalliance that 8ecomes fully flushed? Love demands my cunning just as my raids. If it is to 8e, she will never understand how thoroughly she was manipul8ted, her 8ody, her mind, her devotion.<//><b>Effect:</b><.>Multiplies luck gained from journal pages by 8!!!!!!!!</><.>These pages are fucking awful.
 		icon:icons[4,2] icons[4,5] icons[3,3]
 		passive:multiply luck yield of pages by 8
@@ -421,7 +426,7 @@ Upgrades
 
 	*pageUpgrade7
 		name:Shameful literature
-		desc:I remem8er Dualscar again. My distraction from our 8anter was momentarily a8solute, and I inquire into the shadows. 8ut he is gone.</>Then go, my kismesis. Fume with the indign8tion I gave you. I can only pray it 8lackens our 8ond. I must know such exhi8itions agit8 him and hence why I 8other, otherwise it would 8e easy to dismiss him 8efore I partook. Let it 8e a gift of antagoniz8tion to you, my dear rival, on which you may 8rew pitch for me anew. And if it is true envy, a vermilion yearning I can't a8ide, then though it pains me it will 8e farewell.</>Alas, it may 8e that I am too good at spurring h8. Too good, at least, for him. I only hope he is not so foolish as to tread a path of less torrid malice.</>For if he does........<//><b>Effect:</b><.>Multiplies luck gained from journal pages by 8!!!!!!!!</><.>Have you actually been reading this shit?
+		desc:I remem8er Dualscar again. My distraction from our 8anter was momentarily a8solute, and I inquire into the shadows. 8ut he is gone.</></>Then go, my kismesis. Fume with the indign8tion I gave you. I can only pray it 8lackens our 8ond. I must know such exhi8itions agit8 him and hence why I 8other, otherwise it would 8e easy to dismiss him 8efore I partook. Let it 8e a gift of antagoniz8tion to you, my dear rival, on which you may 8rew pitch for me anew. And if it is true envy, a vermilion yearning I can't a8ide, then though it pains me it will 8e farewell.</></>Alas, it may 8e that I am too good at spurring h8. Too good, at least, for him. I only hope he is not so foolish as to tread a path of less torrid malice.</></>For if he does........<//><b>Effect:</b><.>Multiplies luck gained from journal pages by 8!!!!!!!!</><.>Have you actually been reading this shit?
 		icon:icons[4,2] icons[4,7] icons[3,3]
 		passive:multiply luck yield of pages by 8
 		cost:800000000000000 luck, 8000 spotlight
