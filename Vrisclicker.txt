@@ -8,7 +8,7 @@ Let's make a game!
 
 Settings
 	background:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/background.png
-	building cost increase:108%
+	building cost increase:115%
 	building cost refund:88%
 	spritesheet:icons, 48 by 48, https://raw.githubusercontent.com/Morphimus/vrisclicker/main/icons.png
 		/* Icon columns are as follows
@@ -140,7 +140,7 @@ Upgrades
 	*eightballUpgrade1
 		name:8r8k! 8r8k! 8r8k!
 		desc:Ouch! Broken 8-8alls suck to step on.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
-		icon:icons[4,4], icons[3,0]
+		icon:icons[4,4] icons[3,0]
 		passive:multiply luck yield of eightballs by 2
 		cost:12 luck
 		req:10 luck:earned
@@ -148,7 +148,7 @@ Upgrades
 	*eightballUpgrade2
 		name:8-balls everywhere!
 		desc:Your hive is absolutely lousy with the things<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
-		icon:icons[4,5], icons[3,0]
+		icon:icons[4,5] icons[3,0]
 		passive:multiply luck yield of eightballs by 2
 		cost:88 luck
 		req:40 luck:earned
@@ -156,7 +156,7 @@ Upgrades
 	*diceUpgrade1
 		name:Roll the dice!
 		desc:Soon I will have all the luck! All of it!<//><b>Effect:</b><.>Multiplies luck gained from dice by 2.
-		icon:icons[4,4], icons[3,1]
+		icon:icons[4,4] icons[3,1]
 		passive:multiply luck yield of dice by 2
 		cost:888 luck
 		req:400 luck:earned
@@ -164,7 +164,7 @@ Upgrades
 	*diceUpgrade2
 		name:More dice less problems.
 		desc:They always land on the num8ers I want.<//><b>Effect:</b><.>Multiplies luck gained from dice by 2.
-		icon:icons[4,5], icons[3,1]
+		icon:icons[4,5] icons[3,1]
 		passive:multiply luck yield of dice by 2
 		cost:88888 luck
 		req:40000 luck:earned
@@ -172,7 +172,7 @@ Upgrades
 	*mindControl
 		name:Mind Control
 		desc:Your will is miiiiiiiine!!!!!!!!<//><b>Effect:</b><.>Unlocks resource generators.
-		icon:icons[4,8], icons[1,8]
+		icon:icons[4,8] icons[1,8]
 		cost:1000 luck
 		req:1000 luck:earned
 
@@ -200,8 +200,8 @@ Upgrades
 		desc:Just my luck. ::::(<//><b>Effect:</b><.>Increases passive luck generation by like a fuckton, but makes active clicking almost worthless.
 		icon:icons[2,0] icons[0,0]
 		passive:multiply yield of luck by 800
-		passive:multiply luck yield of luckButton by 0.5
-		cost:8888 luck, 20 boondollars
+		passive:multiply luck yield of luckButton by 0.001
+		cost:8888 luck, 200 boondollars
 		req:5000 luck:earned
 
 	//Misc. upgrades//
@@ -216,14 +216,14 @@ Upgrades
 	*egbert2
 		name:I'm June now.
 		desc:8luh 8luh still a huge dork!
-		icon:icons[1,13], icons[0,13]
+		icon:icons[1,13] icons[0,13] icons[0,13]
 		cost:8888 luck
 		req:egbert1, 4000 luck
 
 	*egbert3
 		name:D8 Egbert
 		desc:Dating the main character is sure to propel you into the spotlight.<//><b>Effect:</b><.>Gain 1 spotlight per minute.
-		icon:icons[5,6], icons[1,13]
+		icon:icons[5,6] icons[4,13] icons[1,13]
 		on tick:yield 0.0167 spotlight
 		cost:413612 luck
 		req:egbert1, 100000 luck
