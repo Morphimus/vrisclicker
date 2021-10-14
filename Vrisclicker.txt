@@ -3,8 +3,8 @@ Let's make a game!
 	by:Morphimus
 	desc:vriska idle game lmao
 	created:10/13/2021
-	updated:10/13/2021
-	version:0
+	updated:10/14/2021
+	version:0.8
 
 Settings
 	background:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/background.png
