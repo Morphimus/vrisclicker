@@ -227,6 +227,14 @@ Upgrades
 		cost:888888 luck
 		req:400000 luck:earned, diceUpgrade2
 
+	*diceUpgrade4
+		name:Critical roll!
+		desc:The more rolls I get the more goals are met!<//><b>Effect:</b><.>Multiplies luck gained from dice by 4!
+		icon:icons[4,7] icons[3,1]
+		passive:multiply luck yield of dice by 4
+		cost:8888888 luck, 1 spotlight
+		req:4000000 luck:earned, diceUpgrade3, 1 spotlight:earned
+
 	*baitUpgrade1
 		name:Like bleatbeasts to the slaughter.
 		desc:Damn, she eats so many trolls........<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
@@ -234,6 +242,14 @@ Upgrades
 		passive:multiply luck yield of spiderbait by 2
 		cost:800000 luck
 		req:400000 luck:earned
+
+	*baitUpgrade2
+		name:Body pile
+		desc:Killing all these gogdamned trolls to feed my lusus. Fucking pain in my ass.<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
+		icon:icons[4,5] icons[2,2]
+		passive:multiply luck yield of spiderbait by 2
+		cost:8000000 luck
+		req:4000000 luck:earned, baitUpgrade1
 
 	*mindControl
 		name:Mind Control
@@ -254,19 +270,19 @@ Upgrades
 
 	*advance1
 		name:Arrow candy
-		desc:Let's go to the next page, shall we?<//><b>Effect:</b><.>Makes clicking the luck button much more lucative. 4 points more lucrative, in fact.
+		desc:Let's go to the next page, shall we?<//><b>Effect:</b><.>Makes clicking the luck button much more lucative. 1 point more lucrative, in fact.
 		icon:icons[7,0]
-		passive:increase luck yield of luckButton by 4
+		passive:increase luck yield of luckButton by 1
 		cost:50 luck
 		req:50 luckButton clicks
 
 	*advance2
 		name:More arrows
-		desc:Another page another wage.<//><b>Effect:</b><.>Doubles the luck gained from the luck button.
+		desc:Another page another wage.<//><b>Effect:</b><.>Quintuples the luck gained from the luck button.
 		icon:icons[7,0]
-		passive:multiply luck yield of luckButton by 2
+		passive:multiply luck yield of luckButton by 5
 		cost:1000 luck
-		req:500 luckButton clicks, advance1
+		req:200 luckButton clicks, advance1
 
 	*advance3
 		name:Yet another arrow
@@ -274,16 +290,23 @@ Upgrades
 		icon:icons[7,0]
 		passive:multiply luck yield of luckButton by 10
 		cost:100000 luck
-		req:1000 luckButton clicks, advance2
+		req:500 luckButton clicks, advance2
 
 	*advance4
 		name:Repetetive strain injury
 		desc:Don't hurt your hand, seriously!<//><b>Effect:</b><.>Multiplies luck gained from the luck button by 100.
 		icon:icons[7,0]
 		passive:multiply luck yield of luckButton by 100
-		cost:10000000 luck
-		req:1500 luckButton clicks, advance3
+		cost:10000000 luck, 10 spotlight
+		req:1025 luckButton clicks, advance3, 1 spotlight:earned
 
+	*advance5
+		name:All of Homestuck
+		desc:You clicked the luck button enough times to have clicked through all 8123 pages of Homestuck!<//><b>Effect:</b><.>Multiplies luck gained from the luck button by 413.
+		icon:icons[4,3] icons[7,0]
+		passive:multiply luck yield of luckButton by 413
+		cost:40 spotlight
+		req:8123 luckButton clicks, advance4, 10 spotlight:earned
 
 	//production upgrades//
 
@@ -333,7 +356,7 @@ Upgrades
 		desc:Dating the main character is sure to propel you into the spotlight.<//><b>Effect:</b><.>Gain 1 spotlight per minute.
 		icon:icons[5,5] icons[1,13]
 		on tick:yield 0.0167 spotlight
-		cost:413612 luck, 1000 boondollars
+		cost:413612 luck, 413 boondollars
 		req:egbert2, 300000 luck:earned
 		//Note to self: make it so that instead of just giving you the spotlight, June shows up as a shiny you have to click for it.//
 
