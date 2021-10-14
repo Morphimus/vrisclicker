@@ -91,6 +91,7 @@ Shinies
 		icon:icons[7,0] icons[0,1]
 		on click:
 			$boost=1
+			if (have aradiaBoost) $boost=4
 			if (chance(50%))
 				$amount=max(7,random(luck:ps*60*1,luck:ps*60*5))*$boost
 				toast Aradia does weird time shit, which ends up netting you<//><b>[$amount] luck</b>.
@@ -114,6 +115,7 @@ Buildings
 		cost increase:108%
 		on tick:yield 0.134 luck
 		req:1 luck:earned
+		ps:show
 
 	*d8s|dice
 		name:D8s|Dice
@@ -122,6 +124,7 @@ Buildings
 		cost:88 luck
 		on tick:yield 1 luck
 		req:80 luck:earned
+		ps:show
 
 	*spiderbait
 		name:Spiderbait
@@ -130,6 +133,7 @@ Buildings
 		cost:12000 luck
 		on tick:yield 20 luck
 		req:80000 luck:earned, mindControl
+		ps:show
 
 	*chump|chumps
 		name:Mind controlled chump|Mind controlled chumps
@@ -138,6 +142,7 @@ Buildings
 		cost:8000 luck
 		on tick:yield 0.01 boondollars
 		req:mindControl
+		ps:show
 
 	*fraymotif|fraymotifs
 		name:Fraymotif|Fraymotifs
@@ -147,10 +152,11 @@ Buildings
 		cost increase:112%
 		on tick:yield 1000 luck
 		req:413 boondollars:earned
+		ps:show
 
 	*level|levels
 		name:God tier levels
-		desc:I've got all the levels! All of them!!!!!!!!<//><b>Effect:</b><.>Produces 8888 luck per second.</>Produces 8 boondollars per second.</>Produces about 1 spotlight every 8 minutes or so.
+		desc:I've got all the levels! All of them!!!!!!!!<//><b>Effect:</b><.>Produces 8888 luck per second.</><.>Produces 8 boondollars per second.</><.>Produces about 1 spotlight every 8 minutes or so.
 		icon:icons[4,4] icons[1,0]
 		cost:1 spotlight
 		cost increase:105%
@@ -158,6 +164,7 @@ Buildings
 		on tick:yield 8 boondollars
 		on tick:yield 0.002 spotlight
 		req:godTier
+		ps:show
 
 Upgrades
 	*TEMPLATE
@@ -223,10 +230,10 @@ Upgrades
 		req:400000000 luck:earned, eightballUpgrade6, 10 spotlight:earned
 
 	*eightballUpgrade8
-		name:8 to the 8th!!!!!!!!
-		desc:That's a lot of 8s.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 8!!!!!!!!
+		name:Ultimate 8-balls
+		desc:The pinnacle of 8-ball power... Or is it?<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 80!!!!!!!! Wow!
 		icon:icons[4,2] icons[4,7] icons[3,0]
-		passive:multiply luck yield of eightballs by 8
+		passive:multiply luck yield of eightballs by 80
 		cost:80000000000 luck, 80 spotlight
 		req:40000000000 luck:earned, eightballUpgrade7, 50 spotlight:earned
 
@@ -262,6 +269,22 @@ Upgrades
 		cost:8888888 luck, 1 spotlight
 		req:4000000 luck:earned, diceUpgrade3, 1 spotlight:earned
 
+	*diceUpgrade5
+		name:8 to the 8th!!!!!!!!
+		desc:That's a lot of 8s........<//><b>Effect:</b><.>Multiplies luck gained from dice by 8!!!!!!!!
+		icon:icons[4,2] icons[4,4] icons[3,1]
+		passive:multiply luck yield of dice by 8
+		cost:88888888 luck, 10 spotlight
+		req:40000000 luck:earned, diceUpgrade4, 10 spotlight:earned
+
+	*diceUpgrade6
+		name:Troll bone dice
+		desc:Mor8id, 8ut that's just how life is on Alternia.<//><b>Effect:</b><.>Multiplies luck gained from dice by 8!!!!!!!!
+		icon:icons[4,2] icons[4,5] icons[3,1]
+		passive:multiply luck yield of dice by 8
+		cost:888888888 luck, 20 spotlight
+		req:400000000 luck:earned, diceUpgrade5, 100 spotlight:earned
+
 	*baitUpgrade1
 		name:Like bleatbeasts to the slaughter.
 		desc:Damn, she eats so many trolls........<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
@@ -286,28 +309,37 @@ Upgrades
 		cost:80000000 luck
 		req:40000000 luck:earned, baitUpgrade2
 
-	*mindControl
-		name:Mind Control
-		desc:Your will is miiiiiiiine!!!!!!!!<//><b>Effect:</b><.>Unlocks resource generators.
-		icon:icons[4,8] icons[1,8]
-		cost:1000 luck
-		req:1000 luck:earned
+	*baitUpgrade4
+		name:Feeding routine
+		desc:Another day another 8atch of dead trolls.<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 4!
+		icon:icons[4,7] icons[2,2]
+		passive:multiply luck yield of spiderbait by 4
+		cost:800000000 luck
+		req:400000000 luck:earned, baitUpgrade3
 
-	*stockExchange1
+	*chumpUpgrade1
 		name:LOMAT Stock Exchange
-		desc:Manipul8ing dum8 consorts has never 8een easier.<//><b>Effect:</b><.>Multiply chumps' Boondollar production by 8!!!!!!!!.
-		icon:icons[4,3] icons[2,1]
+		desc:Manipul8ing dum8 consorts has never 8een easier.<//><b>Effect:</b><.>Multiply chumps' Boondollar production by 8!!!!!!!!
+		icon:icons[4,2] icons[2,1]
 		passive:multiply boondollar yield of chumps by 8
 		cost:1 boondollar, 8888 luck
 		req:1 boondollars:earned
 
-	*godTier
-		name:godtier
-		desc:Battle tactics bought from consorts<//><b>Effect:</b><.>You can no longer die unless the universe deems it a just or heroic death.</>Also unlocks resource generators.
-		icon:icons[0,14] icons[2,0]
-		cost:20 spotlight, 1000 boondollars, 1000000 luck
-		req:1000000 luck:earned, 20 spotlight:earned, 1000 boondollars:earned
-		
+	*chumpUpgrade2
+		name:Manipul8tion
+		desc:Stupid 8roken game economy.<//><b>Effect:</b><.>Multiply chumps' Boondollar production by 8!!!!!!!!
+		icon:icons[4,2] icons[2,1]
+		passive:multiply boondollar yield of chumps by 8
+		cost:1000 boondollars, 88888888 luck
+		req:1000 boondollars:earned
+
+	*levelUpgrade1
+		name:XP exploits
+		desc:Gaining levels is so easy!<//><b>Effect:</b>:<.>Multiplies resource generation of god tier levels by 2.
+		icon:icons[4,4] icons[1,0]
+		passive:multiply yield of levels by 2
+		cost:10000 boondollars
+		req:20 levels
 
 	//click upgrades//
 
@@ -388,6 +420,20 @@ Upgrades
 
 	//Misc. upgrades//
 
+	*mindControl
+		name:Mind Control
+		desc:Your will is miiiiiiiine!!!!!!!!<//><b>Effect:</b><.>Unlocks resource generators.
+		icon:icons[4,8] icons[1,8]
+		cost:1000 luck
+		req:1000 luck:earned
+
+	*godTier
+		name:godtier
+		desc:finally briska get to got tiger<//><b>Effect:</b><.>You can no longer die unless the universe deems it a just or heroic death.</><.>Also unlocks resource generators.
+		icon: icons[2,0] icons[0,14]
+		cost:20 spotlight, 1000 boondollars, 1000000 luck
+		req:1000000 luck:earned, 20 spotlight:earned, 1000 boondollars:earned
+
 	*egbert1
 		name:Mess with John
 		desc:8luh 8luh huge dork!
@@ -409,7 +455,14 @@ Upgrades
 		on tick:yield 0.0167 spotlight
 		cost:413612 luck, 413 boondollars
 		req:egbert2, 300000 luck:earned
-		//Note to self: make it so that instead of just giving you the spotlight, June shows up as a shiny you have to click for it.//
+		//Note to self: make it so that instead of just giving you the spotlight, June shows up as a shiny you have to click for it. Maybe in addition?//
+
+	*aradiaBoost
+		name:Rel8tionship mended with Aradia
+		desc:All bridges can be rebuilt with time! Even ones you burnt down OuO<//><b>Effect:</b><.>Quintuple's Aradia's timeskip effectiveness.
+		icon:icons[1,1] icons[0,1]
+		cost:100 spotlight
+		req:200 spotlight:earned
 
 Achievements
 	*achieveVriska
