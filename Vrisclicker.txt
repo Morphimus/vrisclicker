@@ -344,7 +344,7 @@ Upgrades
 		cost:8000000000 luck
 		req:4000000000 luck:earned, baitUpgrade4
 
-	pageUpgrade1
+	*pageUpgrade1
 		name:Calignous riddle
 		desc:The Orphaner poses a caliginous riddle like no other I've met. I am presuming him 8othered 8y jealousy, and it would 8e sickening if it were not so marvelously amusing. 8ut then, who 8ut royalty could have the finned cheek to show disdain for the manner in which his 8lack lover conducts her red conquests? Less has acceler8ted meeker than I to homicide, and the viol8tion would hold me aghast, again, if his misgivings did not complement his so endearing arsenal of qu8nt flaws. It is impossi8le to stifle this grin even now as I write. <//><b>Effect:</b><.>Multiplies luck gained from journal pages by 2.
 		icon:icons[4,4] icons[3,3]
