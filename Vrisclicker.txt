@@ -222,7 +222,7 @@ Upgrades
 		cost:800000000 luck, 20 spotlight
 		req:400000000 luck:earned, eightballUpgrade6, 10 spotlight:earned
 
-	*eightballUpgrade7
+	*eightballUpgrade8
 		name:8 to the 8th!!!!!!!!
 		desc:That's a lot of 8s.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 8!!!!!!!!
 		icon:icons[4,2] icons[4,7] icons[3,0]
