@@ -8,7 +8,7 @@ Let's make a game!
 
 Settings
 	background:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/background.png
-	building cost increase:115%
+	building cost increase:110%
 	building cost refund:88%
 	spritesheet:icons, 48 by 48, https://raw.githubusercontent.com/Morphimus/vrisclicker/main/icons.png
 		/* Icon columns are as follows
@@ -88,16 +88,16 @@ Shinies
 		frequency: 55
 		frequency variation: 20
 		req:10 luck:earned
-		icon:icons[0,1]
+		icon:icons[7,0] icons[0,1]
 		on click:
 			$boost=1
-			if (chance(75%))
+			if (chance(50%))
 				$amount=max(7,random(luck:ps*60*1,luck:ps*60*5))*$boost
 				toast Aradia does weird time shit, which ends up netting you<//><b>[$amount] luck</b>.
 				yield $amount luck
 			else
 				$amount=luck:ps*60*$boost
-				toast Aradia tick the clock forward when gets you<//><b>[$amount] luck</b>!
+				toast Aradia ticks the clock forward when gets you<//><b>[$amount] luck</b>!
 				yield $amount luck
 			end
 		end
@@ -115,12 +115,20 @@ Buildings
 		req:1 luck:earned
 
 	*d8s|dice
-		name:One d8|d8s
+		name:D8s|Dice
 		desc:Roll the dice!!!!!!!!<//><b>Effect:</b><.>Produces 1 luck per second.
 		icon:icons[3,1]
 		cost:88 luck
 		on tick:yield 1 luck
 		req:80 luck:earned
+
+	*spiderbait
+		name:Spiderbait
+		desc:Well, you gotta feed spidermom........<//><b>Effect:</b><.>Produces 20 luck per second.
+		icon:icons[2,2]
+		cost:12000 luck
+		on tick:yield 20 luck
+		req:80000 luck:earned, mindControl
 
 	*chump|chumps
 		name:Mind controlled chump|Mind controlled chumps
@@ -134,7 +142,7 @@ Upgrades
 	*TEMPLATE
 		on click:anim glow
 
-	//building upgrades
+	//building upgrades//
 
 
 	*eightballUpgrade1
@@ -142,16 +150,24 @@ Upgrades
 		desc:Ouch! Broken 8-8alls suck to step on.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
 		icon:icons[4,4] icons[3,0]
 		passive:multiply luck yield of eightballs by 2
-		cost:12 luck
-		req:10 luck:earned
+		cost:80 luck
+		req:40 luck:earned
 
 	*eightballUpgrade2
 		name:8-balls everywhere!
 		desc:Your hive is absolutely lousy with the things<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
 		icon:icons[4,5] icons[3,0]
 		passive:multiply luck yield of eightballs by 2
-		cost:88 luck
-		req:40 luck:earned
+		cost:800 luck
+		req:400 luck:earned, eightballUpgrade1
+
+	*eightballUpgrade3
+		name:This might 8e too m8ny 8-8alls.
+		desc:Running out of room to put them<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 2.
+		icon:icons[4,6] icons[3,0]
+		passive:multiply luck yield of eightballs by 2
+		cost:80000 luck
+		req:40000 luck:earned, eightballUpgrade2
 
 	*diceUpgrade1
 		name:Roll the dice!
@@ -167,7 +183,15 @@ Upgrades
 		icon:icons[4,5] icons[3,1]
 		passive:multiply luck yield of dice by 2
 		cost:88888 luck
-		req:40000 luck:earned
+		req:40000 luck:earned, diceUpgrade1
+
+	*baitUpgrade1
+		name:Like bleatbeasts to the slaughter.
+		desc:Damn, why she gotta eat so many trolls tho.<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
+		icon:icons[4,4] icons[2,2]
+		passive:multiply luck yield of spiderbait by 2
+		cost:800000 luck
+		req:400000 luck:earned
 
 	*mindControl
 		name:Mind Control
@@ -185,15 +209,15 @@ Upgrades
 		req:1 boondollars:earned
 
 
-	//production upgrades
+	//production upgrades//
 
 	*beginnersLuck
 		name:Beginner's luck
-		desc:Lucky!<//><b>Effect:</b><.>Multiplies passive luck generation by 2.
+		desc:Lucky!<//><b>Effect:</b><.>Multiplies passive luck generation by 1.5.
 		icon:icons[2,0]
 		passive:multiply yield of luck by 1.5
-		cost:100 luck
-		req:50 luck:earned
+		cost:1000 luck
+		req:500 luck:earned
 
 	*badBreak
 		name:8ad 8r8k
@@ -201,13 +225,13 @@ Upgrades
 		icon:icons[2,0] icons[0,0]
 		passive:multiply yield of luck by 800
 		passive:multiply luck yield of luckButton by 0.001
-		cost:8888 luck, 200 boondollars
-		req:5000 luck:earned
+		cost:88888888 luck, 888888 boondollars
+		req:50000000 luck:earned
 
 	//Misc. upgrades//
 
 	*egbert1
-		name:Mess with John
+		name:Mess with Egbert
 		desc:8luh 8luh huge dork!
 		icon:icons[1,13]
 		cost:413 luck, 10 boondollars
@@ -217,16 +241,16 @@ Upgrades
 		name:I'm June now.
 		desc:8luh 8luh still a huge dork!
 		icon:icons[4,13] icons[1,13] icons[0,13]
-		cost:8888 luck
-		req:egbert1, 4000 luck
+		cost:8888 luck, 100 boondollars
+		req:egbert1, 5000 luck:earned
 
 	*egbert3
 		name:D8 Egbert
 		desc:Dating the main character is sure to propel you into the spotlight.<//><b>Effect:</b><.>Gain 1 spotlight per minute.
 		icon:icons[5,5] icons[1,13]
 		on tick:yield 0.0167 spotlight
-		cost:413612 luck
-		req:egbert1, 100000 luck
+		cost:413612 luck, 1000 boondollars
+		req:egbert1, 300000 luck:earned
 
 Achievements
 	*achieveVriska
