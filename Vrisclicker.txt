@@ -115,7 +115,6 @@ Buildings
 		cost increase:108%
 		on tick:yield 0.134 luck
 		req:1 luck:earned
-		ps:show
 
 	*d8s|dice
 		name:D8s|Dice
@@ -124,7 +123,6 @@ Buildings
 		cost:88 luck
 		on tick:yield 1 luck
 		req:80 luck:earned
-		ps:show
 
 	*spiderbait
 		name:Spiderbait
@@ -133,7 +131,6 @@ Buildings
 		cost:12000 luck
 		on tick:yield 20 luck
 		req:80000 luck:earned, mindControl
-		ps:show
 
 	*chump|chumps
 		name:Mind controlled chump|Mind controlled chumps
@@ -142,7 +139,6 @@ Buildings
 		cost:8000 luck
 		on tick:yield 0.01 boondollars
 		req:mindControl
-		ps:show
 
 	*fraymotif|fraymotifs
 		name:Fraymotif|Fraymotifs
@@ -152,7 +148,6 @@ Buildings
 		cost increase:112%
 		on tick:yield 1000 luck
 		req:413 boondollars:earned
-		ps:show
 
 	*level|levels
 		name:God tier levels
@@ -164,7 +159,6 @@ Buildings
 		on tick:yield 8 boondollars
 		on tick:yield 0.002 spotlight
 		req:godTier
-		ps:show
 
 Upgrades
 	*TEMPLATE
