@@ -148,6 +148,17 @@ Buildings
 		on tick:yield 1000 luck
 		req:413 boondollars:earned
 
+	*level|levels
+		name:God tier levels
+		desc:I've got all the levels! All of them!!!!!!!!<//><b>Effect:</b><.>Produces 8888 luck per second.</>Produces 8 boondollars per second.</>Produces about 1 spotlight every 8 minutes or so.
+		icon:icons[4,4] icons[1,0]
+		cost:1 spotlight
+		cost increase:105%
+		on tick:yield 8888 luck
+		on tick:yield 8 boondollars
+		on tick:yield 0.002 spotlight
+		req:godTier
+
 Upgrades
 	*TEMPLATE
 		on click:anim glow
@@ -203,6 +214,22 @@ Upgrades
 		cost:80000000 luck, 10 spotlight
 		req:40000000 luck:earned, eightballUpgrade5, 10 spotlight:earned
 
+	*eightballUpgrade7
+		name:Gr8 times
+		desc:8-ball? More like having a ball!<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 8!!!!!!!!
+		icon:icons[4,2] icons[4,6] icons[3,0]
+		passive:multiply luck yield of eightballs by 8
+		cost:800000000 luck, 20 spotlight
+		req:400000000 luck:earned, eightballUpgrade6, 10 spotlight:earned
+
+	*eightballUpgrade7
+		name:8 to the 8th!!!!!!!!
+		desc:That's a lot of 8s.<//><b>Effect:</b><.>Multiplies luck gained from eightballs by 8!!!!!!!!
+		icon:icons[4,2] icons[4,7] icons[3,0]
+		passive:multiply luck yield of eightballs by 8
+		cost:80000000000 luck, 80 spotlight
+		req:40000000000 luck:earned, eightballUpgrade7, 50 spotlight:earned
+
 	*diceUpgrade1
 		name:Roll the dice!
 		desc:Soon I will have all the luck! All of it!<//><b>Effect:</b><.>Multiplies luck gained from dice by 2.
@@ -251,6 +278,14 @@ Upgrades
 		cost:8000000 luck
 		req:4000000 luck:earned, baitUpgrade1
 
+	*baitUpgrade3
+		name:This sucks.
+		desc:Spidermom sucks actually.<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
+		icon:icons[4,6] icons[2,2]
+		passive:multiply luck yield of spiderbait by 2
+		cost:80000000 luck
+		req:40000000 luck:earned, baitUpgrade2
+
 	*mindControl
 		name:Mind Control
 		desc:Your will is miiiiiiiine!!!!!!!!<//><b>Effect:</b><.>Unlocks resource generators.
@@ -265,6 +300,14 @@ Upgrades
 		passive:multiply boondollar yield of chumps by 8
 		cost:1 boondollar, 8888 luck
 		req:1 boondollars:earned
+
+	*godTier
+		name:godtier
+		desc:Battle tactics bought from consorts<//><b>Effect:</b><.>You can no longer die unless the universe deems it a just or heroic death.</>Also unlocks resource generators.
+		icon:icons[0,14] icons[2,0]
+		cost:20 spotlight, 1000 boondollars, 1000000 luck
+		req:1000000 luck:earned, 20 spotlight:earned, 1000 boondollars:earned
+		
 
 	//click upgrades//
 
@@ -303,14 +346,14 @@ Upgrades
 	*advance5
 		name:All of Homestuck
 		desc:You clicked the luck button enough times to have clicked through all 8123 pages of Homestuck!<//><b>Effect:</b><.>Multiplies luck gained from the luck button by 413.
-		icon:icons[4,3] icons[7,0]
+		icon:icons[7,0] icons[7,2]
 		passive:multiply luck yield of luckButton by 413
-		cost:40 spotlight
+		cost:100000000 luck, 32 spotlight
 		req:8123 luckButton clicks, advance4, 10 spotlight:earned
 
 	//production upgrades//
 
-	*beginnersLuck
+	*luckUpgrade1
 		name:Beginner's luck
 		desc:Lucky!<//><b>Effect:</b><.>Multiplies all luck generation by 1.5.
 		icon:icons[2,0]
@@ -318,13 +361,21 @@ Upgrades
 		cost:1000 luck
 		req:500 luck:earned
 
-	*luckyBreak
+	*luckUpgrade2
 		name:Lucky 8r8k
 		desc:So much luck I am downright drowning in it.<//><b>Effect:</b><.>Double all luck generation.
 		icon:icons[2,0]
 		passive:multiply yield of luck by 2
 		cost:1800000 luck
-		req:1000000 luck:earned
+		req:1000000 luck:earned, luckUpgrade1
+
+	*luckUpgrade3
+		name:Your Luck is miiiiiiiine!
+		desc:Stealing luck has never been so fun.<//><b>Effect:</b><.>Double all luck generation.
+		icon:icons[2,0]
+		passive:multiply yield of luck by 2
+		cost:500000000 luck
+		req:100000000 luck:earned, luckUpgrade2
 
 	*badBreak
 		name:8ad 8r8k
