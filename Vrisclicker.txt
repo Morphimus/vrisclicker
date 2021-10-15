@@ -148,12 +148,10 @@ Shinies
 I have commented out egbertHand */
 
 	*tavros
-		$hesHere=0
 		on tick:
-			if (have tavrosIsHere)
-				$hesHere=10
-			end
-		frequency:$hesHere
+			if (have tavrosIsHere) $tavfreq=10
+		end
+		frequency:$tavfreq
 		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
