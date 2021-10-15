@@ -111,12 +111,11 @@ Resources
 		class:noBackground
 		show earned
 		hidden when 0
+
 	*tavbux
-		name:tavbux
-		desc:la
-		icon:icons[0,2]
-		class:noBackground
-		show earned
+		always hide
+	*egbux
+		always hide
 
 Shinies
 	*aradiaTimeskip
@@ -140,7 +139,7 @@ Shinies
 			end
 		end
 
-/*	*egbertHand
+	*egbertHand
 		movement:anywhere fade
 		frequency:40
 		frequency variation:30
@@ -151,7 +150,6 @@ Shinies
 			toast You got [$amount] spotlight... For some reason?
 			yield $amount spotlight
 		end
-I have commented out egbertHand */
 
 	*tavros
 		movement:onBottom followMouseSlow
@@ -624,36 +622,52 @@ Upgrades
 		desc:Tavros will periodically show up to give you boondollars!</><#f00>WARNING!</#> He is annoying and cannot be removed.
 		icon:icons[1,2] icons[0,2]
 		cost:1 luck
+		req:100 boondollars:earned
 		on tick:
 			yield 1 tavbux
-			if (tavbux>10 and chance(10%))
+			if (tavbux>15 and chance(10%))
 				spawn tavros
 				tavbux is 0
 			end
 		end
-		//req:100 boondollars:earned//
+
 
 	*egbert1
-		name:Mess with John
-		desc:8luh 8luh huge dork!
+		name:Mysterious hand
+		desc:Whose fucking hand is this?
+		icon:icons[1,13] [0,0]
+		cost:1 luck
+		req:1 luck:earned
+		on tick:
+			yield 1 egbux
+			if (egbux>60 and chance(50%))
+				spawn egbertHand
+				egbux is 0
+			end
+		end
+
+	*egbert2
+		name:what
+		desc:Wait what how is Egbert here on Alternia? This is anachronistic!
 		icon:icons[1,13]
 		cost:413 luck, 10 boondollars
 		req:1000 luck:earned, 1 boondollar:earned
 
-	*egbert2
+
+	*egbert3
 		name:I'm June now.
 		desc:8luh 8luh still a huge dork!
 		icon:icons[4,13] icons[1,13] icons[0,13]
 		cost:8888 luck, 100 boondollars
-		req:egbert1, 5000 luck:earned
+		req:egbert2, 5000 luck:earned
 
-	*egbert3
+	*egbert4
 		name:D8 Egbert
 		desc:Dating the main character is sure to propel you into the spotlight.<//><b>Effect:</b><.>Gain 1 spotlight per minute.
 		icon:icons[5,5] icons[1,13]
 		on tick:yield 0.0167 spotlight
 		cost:413612 luck, 413 boondollars
-		req:egbert2, 300000 luck:earned
+		req:egbert3, 300000 luck:earned
 		//Note to self: make it so that instead of just giving you the spotlight, June shows up as a shiny you have to click for it. Maybe in addition?//
 
 	*aradiaBoost
