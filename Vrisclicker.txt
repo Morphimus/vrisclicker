@@ -148,7 +148,7 @@ Shinies
 I have commented out egbertHand */
 
 	*tavros
-		on tick:
+		passive:
 			if (have tavrosIsHere) toast hi.
 //$tavfreq=10//
 		end
@@ -622,8 +622,8 @@ Upgrades
 		name:Tavros is here
 		desc:Tavros will periodically show up to give you boondollars!</><#f00>WARNING!</#> He is annoying and cannot be removed.
 		icon:icons[1,2] icons[0,2]
-		cost:1 boondollar
-		req:100 boondollars:earned
+		cost:1 luck
+		//req:100 boondollars:earned//
 
 	*egbert1
 		name:Mess with John
