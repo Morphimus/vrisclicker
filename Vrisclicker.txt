@@ -145,11 +145,9 @@ Shinies
 		end
 
 	*tavros
-		if (have tavrosIsHere)
-			movement:onBottom followMouseSlow
-			frequency:5
-			frequency variation:10
-		end
+		if (have tavrosIsHere) frequency:5
+		frequency variation:10
+		movement:onBottom followMouseSlow
 		icon:icons[0,2]
 		on click:
 			$amount=1
