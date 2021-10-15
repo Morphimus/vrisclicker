@@ -113,7 +113,10 @@ Resources
 		hidden when 0
 	*tavbux
 		name:tavbux
+		desc:la
+		icon:icons[0,2]
 		class:noBackground
+		show earned
 		//always hidden//
 
 Shinies
