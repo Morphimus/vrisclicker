@@ -95,7 +95,7 @@ Resources
 Shinies
 	*aradiaTimeskip
 		on click:log Woop
-		movement:onRight moveLeft
+		movement:onRight moveLeft growShrink
 		frequency: 10
 		frequency variation: 70
 		req:1200 luck:earned
@@ -124,6 +124,7 @@ Shinies
 		frequency:30
 		frequency variation:15
 		icon:icons[0,2]
+		re1:tavrosIsHere
 		on click:
 			$amount=1
 			toast Tavros gives you [$amount] boondollar[s?$amount]. Thanks Tavros.
@@ -584,6 +585,13 @@ Upgrades
 		icon: icons[2,0] icons[0,14]
 		cost:20 spotlight, 1000 boondollars, 1000000 luck
 		req:1000000 luck:earned, 20 spotlight:earned, 1000 boondollars:earned
+
+	*tavrosIsHere
+		name:Tavros is here
+		desc:Tavros will periodically show up to give you boondollars!</><#f00>WARNING!</#> He is annoying and cannot be removed.
+		icon:icons[1,2] icons[0,2]
+		cost:1 boondollar
+		req:100 boondollars:earned
 
 	*egbert1
 		name:Mess with John
