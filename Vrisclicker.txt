@@ -145,10 +145,11 @@ Shinies
 		end
 
 	*tavros
-		passive:if (have tavrosIsHere) frequency:5
+		frequency:5
 		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
+		req:tavrosIsHere
 		on click:
 			$amount=1
 			toast Tavros gives you [$amount] boondollar[s?$amount]. Thanks Tavros.
