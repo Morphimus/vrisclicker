@@ -116,15 +116,22 @@ Shinies
 
 	*egbertHand
 		movement:anywhere fade
-		frequency:10
+		frequency:40
+		frequency variation:50
 		icon:icons[1,13]
+		req:egbert1
+		on click:
+			$amount=1
+			toast You got [$amount] spotlight... For some reason?
+			yield $amount spotlight
+		end
 
 	*tavros
 		movement:onBottom followMouseSlow
 		frequency:30
 		frequency variation:15
 		icon:icons[0,2]
-		re1:tavrosIsHere
+		req:tavrosIsHere
 		on click:
 			$amount=1
 			toast Tavros gives you [$amount] boondollar[s?$amount]. Thanks Tavros.
