@@ -626,7 +626,7 @@ Upgrades
 		cost:1 luck
 		on tick:
 			yield 1 tavbux
-			if (tavbux>10 and change(10%))
+			if (tavbux>10 and chance(10%))
 				spawn tavros
 				tavbux is 0
 			end
