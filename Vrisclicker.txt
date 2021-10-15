@@ -128,10 +128,11 @@ Shinies
 
 	*tavros
 		movement:onBottom followMouseSlow
-		frequency:30
-		frequency variation:15
+		if (have tavrosIsHere)
+			frequency:30
+			frequency variation:15
+		end
 		icon:icons[0,2]
-		req:tavrosIsHere
 		on click:
 			$amount=1
 			toast Tavros gives you [$amount] boondollar[s?$amount]. Thanks Tavros.
