@@ -154,8 +154,6 @@ Shinies
 I have commented out egbertHand */
 
 	*tavros
-		frequency:tavbux
-		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
 		req:tavrosIsHere
@@ -164,6 +162,7 @@ I have commented out egbertHand */
 			toast Tavros gives you [$amount] boondollar[s?$amount]. Thanks Tavros.
 			yield $amount boondollars
 		end
+		//I was having trouble getting tavros to spawn conditionally if you have the upgrade. most of the code is on the upgrade.//
 
 Buildings
 	*TEMPLATE
@@ -625,8 +624,13 @@ Upgrades
 		desc:Tavros will periodically show up to give you boondollars!</><#f00>WARNING!</#> He is annoying and cannot be removed.
 		icon:icons[1,2] icons[0,2]
 		cost:1 luck
-		on earn:tavbux is 5
-		on earn:spawn tavros
+		on tick:
+			yield 1 tavbux
+			if (tavbux>10 and change(10%))
+				spawn tavros
+				tavbux is 0
+			end
+		end
 		//req:100 boondollars:earned//
 
 	*egbert1
