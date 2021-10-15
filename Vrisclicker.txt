@@ -149,7 +149,7 @@ I have commented out egbertHand */
 
 	*tavros
 		passive:
-			if (have tavrosIsHere) toast hi.
+			if (have tavrosIsHere) multiply yield of spotlight by 10000
 //$tavfreq=10//
 		end
 		frequency:$tavfreq
