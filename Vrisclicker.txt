@@ -127,8 +127,8 @@ Shinies
 		end
 
 	*tavros
-		movement:onBottom followMouseSlow
-		if (have tavrosIsHere)
+		if (have tavrosIsHere):
+			movement:onBottom followMouseSlow
 			frequency:30
 			frequency variation:15
 		end
