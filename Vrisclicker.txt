@@ -119,6 +119,16 @@ Shinies
 		frequency:10
 		icon:icons[1,13]
 
+	*tavros
+		movement:onBottom followMouseSlow
+		frequency:5
+		icon:icons[0,2]
+		on click:
+			$amount=1
+			toast Tavros gives you [$amount] boondollar[s$amount]. Thanks Tavros.
+			yield $amount boondollars
+		end
+
 Buildings
 	*TEMPLATE
 		on click:anim glow
