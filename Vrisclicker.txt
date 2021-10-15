@@ -148,11 +148,7 @@ Shinies
 I have commented out egbertHand */
 
 	*tavros
-		passive:
-			if (have tavrosIsHere) multiply yield of spotlight by 10000
-//$tavfreq=10//
-		end
-		frequency:$tavfreq
+		frequency:(tavrosIsHere*10)
 		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
