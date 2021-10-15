@@ -114,6 +114,7 @@ Resources
 
 	*tavbux
 		always hidden
+
 	*egbux
 		always hidden
 
@@ -139,7 +140,7 @@ Shinies
 			end
 		end
 
-	*egbertHand
+/*	*egbertHand
 		movement:anywhere fade
 		frequency:40
 		frequency variation:30
@@ -149,7 +150,7 @@ Shinies
 			$amount=1
 			toast You got [$amount] spotlight... For some reason?
 			yield $amount spotlight
-		end
+		end */
 
 	*tavros
 		movement:onBottom followMouseSlow
@@ -638,13 +639,13 @@ Upgrades
 		icon:icons[1,13] [0,0]
 		cost:1 luck
 		req:1 luck:earned
-		on tick:
+		/* on tick:
 			yield 1 egbux
 			if (egbux>60 and chance(50%))
 				spawn egbertHand
 				egbux is 0
 			end
-		end
+		end */
 
 	*egbert2
 		name:what
