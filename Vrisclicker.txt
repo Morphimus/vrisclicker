@@ -117,7 +117,6 @@ Resources
 		icon:icons[0,2]
 		class:noBackground
 		show earned
-		//always hidden//
 
 Shinies
 	*aradiaTimeskip
@@ -627,6 +626,7 @@ Upgrades
 		icon:icons[1,2] icons[0,2]
 		cost:1 luck
 		on earn:tavbux is 5
+		on earn:spawn tavros
 		//req:100 boondollars:earned//
 
 	*egbert1
