@@ -149,7 +149,8 @@ I have commented out egbertHand */
 
 	*tavros
 		on tick:
-			if (have tavrosIsHere) $tavfreq=10
+			if (have tavrosIsHere) toast hi.
+//$tavfreq=10//
 		end
 		frequency:$tavfreq
 		frequency variation:10
