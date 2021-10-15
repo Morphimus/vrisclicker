@@ -121,11 +121,12 @@ Shinies
 
 	*tavros
 		movement:onBottom followMouseSlow
-		frequency:5
+		frequency:30
+		frequency variation:15
 		icon:icons[0,2]
 		on click:
 			$amount=1
-			toast Tavros gives you [$amount] boondollar[s$amount]. Thanks Tavros.
+			toast Tavros gives you [$amount] boondollar[s?$amount]. Thanks Tavros.
 			yield $amount boondollars
 		end
 
