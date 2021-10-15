@@ -23,16 +23,34 @@ Settings
 		*/
 	stylesheet:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/vrisStyle.txt
 
-/*Icons I need to draw: 
+
+
+/*Notes to self:
+
+Icons I need to draw: 
 Mindfang's journal page
 A red circle with a line through it
-Floating john hand (shiny should appear randomly on the screen and fade)
+Floating egbert hand
 Aradia face
-Little floating aradiabot
+Little floating aradiabot and little floating god tier aradia
 Consort
-Hey also move the whole john/june business later on, like maybe make the first one 413 million?
-	also make the june thing say like, wait why is Egbert here already this is anachronistic!
+
+
+TODO BEFORE I DECLARE IT VERSION 1
+Draw and fix all requisite icons
+Move the whole john/june business later on, like maybe make the first one 413 million?
+	also make the first egbert thing say like, wait why is Egbert here already this is anachronistic!
+	and also don't deadname her :(
+
+Change the journals to not have any of the text from homestuck itself.
+
+Make a thing for killing off spidermom.
+	Make it 
+
+
 */
+
+
 
 Layout
 	*main
@@ -127,10 +145,10 @@ Shinies
 		end
 
 	*tavros
-		if (have tavrosIsHere):
+		if (have tavrosIsHere)
 			movement:onBottom followMouseSlow
-			frequency:30
-			frequency variation:15
+			frequency:5
+			frequency variation:10
 		end
 		icon:icons[0,2]
 		on click:
