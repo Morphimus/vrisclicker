@@ -113,9 +113,9 @@ Resources
 		hidden when 0
 
 	*tavbux
-		always hide
+		always hidden
 	*egbux
-		always hide
+		always hidden
 
 Shinies
 	*aradiaTimeskip
