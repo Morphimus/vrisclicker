@@ -111,6 +111,8 @@ Resources
 		class:noBackground
 		show earned
 		hidden when 0
+	*tavbux
+		always hidden
 
 Shinies
 	*aradiaTimeskip
@@ -148,7 +150,7 @@ Shinies
 I have commented out egbertHand */
 
 	*tavros
-		frequency:tavrosIsHere*10
+		frequency:tavbux
 		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
@@ -619,6 +621,7 @@ Upgrades
 		desc:Tavros will periodically show up to give you boondollars!</><#f00>WARNING!</#> He is annoying and cannot be removed.
 		icon:icons[1,2] icons[0,2]
 		cost:1 luck
+		on earn:tavbux is 5
 		//req:100 boondollars:earned//
 
 	*egbert1
