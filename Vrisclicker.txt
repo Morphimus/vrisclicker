@@ -31,8 +31,10 @@ Icons I need to draw:
 Mindfang's journal page
 A red circle with a line through it
 Floating egbert hand
-Aradia face
 Little floating aradiabot and little floating god tier aradia
+Aradia face
+Tavros in rocket chair
+Tavros face
 Consort
 
 
@@ -45,7 +47,7 @@ Move the whole john/june business later on, like maybe make the first one 413 mi
 Change the journals to not have any of the text from homestuck itself.
 
 Make a thing for killing off spidermom.
-	Make it 
+	Make it get rid of all of your spiderbait/make it useless
 
 
 */
@@ -132,10 +134,10 @@ Shinies
 			end
 		end
 
-	*egbertHand
+/*	*egbertHand
 		movement:anywhere fade
 		frequency:40
-		frequency variation:50
+		frequency variation:30
 		icon:icons[1,13]
 		req:egbert1
 		on click:
@@ -143,9 +145,10 @@ Shinies
 			toast You got [$amount] spotlight... For some reason?
 			yield $amount spotlight
 		end
+I have commented out egbertHand */
 
 	*tavros
-		frequency:5
+		frequency:0
 		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
@@ -358,7 +361,7 @@ Upgrades
 		req:400000000000 luck:earned, diceUpgrade7
 
 	*baitUpgrade1
-		name:Like bleatbeasts to the slaughter.
+		name:Like woolbeasts to the slaughter.
 		desc:Damn, she eats so many trolls........<//><b>Effect:</b><.>Multiplies luck gained from spiderbait by 2.
 		icon:icons[4,4] icons[2,2]
 		passive:multiply luck yield of spiderbait by 2
