@@ -27,7 +27,7 @@ Settings
 
 /*Notes to self:
 
-Icons I need to draw: 
+Icons I need to draw:
 Mindfang's journal page
 A red circle with a line through it
 Floating egbert hand
@@ -112,7 +112,9 @@ Resources
 		show earned
 		hidden when 0
 	*tavbux
-		always hidden
+		name:tavbux
+		class:noBackground
+		//always hidden//
 
 Shinies
 	*aradiaTimeskip
