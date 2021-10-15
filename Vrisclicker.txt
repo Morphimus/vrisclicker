@@ -148,7 +148,7 @@ Shinies
 I have commented out egbertHand */
 
 	*tavros
-		frequency:(tavrosIsHere*10)
+		frequency:tavrosIsHere*10
 		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
