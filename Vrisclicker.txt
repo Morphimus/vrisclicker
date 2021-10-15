@@ -145,7 +145,7 @@ Shinies
 		end
 
 	*tavros
-		if (have tavrosIsHere) frequency:5
+		passive:if (have tavrosIsHere) frequency:5
 		frequency variation:10
 		movement:onBottom followMouseSlow
 		icon:icons[0,2]
