@@ -11,44 +11,99 @@ Settings
 	building cost increase:110%
 	building cost refund:88%
 	spritesheet:icons, 48 by 48, https://raw.githubusercontent.com/Morphimus/vrisclicker/main/icons.png
-		/* Icon columns are as follows
-		0 BG panels (row 0 is special, beyond that in hemospectrum order)
-		1 Character faces (same order as prev column)
-		2 Resources
-		3 Generators
-		4 On-top things
-		5 Romance symbols
-		6 Borders
-		7 Misc symbols
-		*/
 	stylesheet:https://raw.githubusercontent.com/Morphimus/vrisclicker/main/vrisStyle.txt
 
+/* icons.png guide
+	0BG	1FACES	2RESRCS	3SHINYS	4GENRTR	5OVRLAY	6SYMBOL	7MISC	8MISC2
+ 0	Default	Vris1	Luck		8ball	Shine	noCrcle	Cueball	
+ 1	Rust	Aradia	Boon$s	AraBot	dice	up1	Arrow	Vis8fld	
+ 2	Bronze	Tavros	Spotlit	Tavshny	Spidrb8	up2	HShouse	Spdrmom	
+ 3	Gold	Sollux	Rl8nshp		Pages	up3	Hivebnt		
+ 4	Iron	Karkat			Consort	up4	WhiteHS		
+ 5	Olive	Nepeta			Lvls	+1			
+ 6	Jade	Kanaya				x2			
+ 7	Teal	Terezi			Army	x4			
+ 8	Cobalt	I-patch				x8			
+ 9	Indigo	Equius				SpadeOL	Spade		
+10	Purple	Gamzee		Faygo		HeartOL	Heart		
+11	Violet	Eridan				DimndOL	Diamond		
+12	Fuchsia	Feferi				Club OL	Club		
+13	Trans	Egbert		EgHand		MndCtrl		HrClip	
+14	LightGT	VrisDed							
+15		Meenah?							
+16	 	BecNoir							
+*/
 
 
 /*Notes to self:
-
-Icons I need to draw:
-Mindfang's journal page
-A red circle with a line through it
-Floating egbert hand
-Little floating aradiabot and little floating god tier aradia
-Aradia face
-Tavros in rocket chair
-Tavros face
-Consort
-
-
 TODO BEFORE I DECLARE IT VERSION 1
 Draw and fix all requisite icons
+Rel8tionship point symbol should be a quadrant, I think? Well no maybe that implies that it's romantic???
+
+Change the journals to not have any of the text from homestuck itself.
+
+Find some other way to sloooooowly generate spotlight. (It couuuuuuld be june hands everywhere... but not dating june)
+
+
+
+STRETCHGOALS
+Make a thing for killing off spidermom.
+	Make it get rid of all of your spiderbait/make it useless but confer some other buff
+
+Rebirth (Retcon stuff????)
+
 Move the whole john/june business later on, like maybe make the first one 413 million?
 	also make the first egbert thing say like, wait why is Egbert here already this is anachronistic!
 	and also don't deadname her :(
 
-Change the journals to not have any of the text from homestuck itself.
+Relationship points?
+	Make them very rare, non generatable, only as special unlocks Or maybe from a special shiny?
+	Spend them on rel8tionship unlocks. There should be about 12 of these.
+	Each unlock gives a special perk.
+		Aradia: Time Boost becomes better, icon changes to godtier aradia
+		Tavros: Gives you 1 boondollar occasionally.
+		Sollux: Some kinda hacking? idk
+		Karkat: Leader bonus????
+		Nepeta:	Some RP thing?
+		Kanaya: (name:Fussyfangs. desc:always meddling!)
+		Terezi: Scourge sister stuff I guess?
+		Equius: Unlocks roboarm? Cueball? New Upgrades I think it should be.
+		Gamzee: Faygo shiny. Does random shit. Like losing luck
+		Eridan: 
+		Feferi: 
+		Egbert: Makes you gain spotlight? Makes the hands appear? Not sure.
+		Meenah: Unlocks ghost army generator
 
-Make a thing for killing off spidermom.
-	Make it get rid of all of your spiderbait/make it useless
+Accurate chronology of upgrades:
 
+FLARP era stuff:
+	Can have Eridan stuff here
+	Can do scourge sisters stuff here
+	Injure Tavros
+	Kanaya dress
+	Kill Aradia
+	get cueball, have it blow up in your face
+	Blind terezi (Mobius double reacharound)
+	
+SGRUB stuff:
+	Start with the SGRUB upgrade, then the rest of this shit can follow.
+	Spidermom has to be dead before you enter SGRUB, but after you know that entering SGRUB is a thing you gotta do.
+	Boondollars start being a thing.
+	Aradia's time shit
+	Tavros' boondollars
+
+Post SGRUB:
+	Meteor hideout
+	Mess with Egbert
+	Make Jack Noir
+	Die
+	Date dead Egbert
+	Date Meenah
+	Retcon becomes an option at some point after death
+
+Retcon:
+	Rebirth the game exactly the same, except you don't die or do the dream bubble shit.
+	
 
 */
 
@@ -111,12 +166,12 @@ Resources
 		class:noBackground
 		show earned
 		hidden when 0
-
 	*tavbux
-		always hidden
-
-	*egbux
-		always hidden
+		name:tavbux
+		desc:la
+		icon:icons[0,2]
+		class:noBackground
+		show earned
 
 Shinies
 	*aradiaTimeskip
@@ -150,7 +205,8 @@ Shinies
 			$amount=1
 			toast You got [$amount] spotlight... For some reason?
 			yield $amount spotlight
-		end */
+		end
+I have commented out egbertHand */
 
 	*tavros
 		movement:onBottom followMouseSlow
@@ -623,51 +679,36 @@ Upgrades
 		desc:Tavros will periodically show up to give you boondollars!</><#f00>WARNING!</#> He is annoying and cannot be removed.
 		icon:icons[1,2] icons[0,2]
 		cost:1 luck
-		req:100 boondollars:earned
 		on tick:
 			yield 1 tavbux
-			if (tavbux>15 and chance(10%))
+			if (tavbux>10 and chance(10%))
 				spawn tavros
 				tavbux is 0
 			end
 		end
-
+		//req:100 boondollars:earned//
 
 	*egbert1
 		name:Mysterious hand
 		desc:Whose hand is this?
-		icon:icons[1,13] [0,0]
-		cost:1 luck
-		req:1 luck:earned
-		/* on tick:
-			yield 1 egbux
-			if (egbux>60 and chance(50%))
-				spawn egbertHand
-				egbux is 0
-			end
-		end */
-
-	*egbert2
-		name:what
-		desc:Wait what how is Egbert here on Alternia? This is anachronistic!
 		icon:icons[1,13]
 		cost:413 luck, 10 boondollars
 		req:1000 luck:earned, 1 boondollar:earned
 
-	*egbert3
+	*egbert2
 		name:I'm June now.
 		desc:8luh 8luh still a huge dork!
 		icon:icons[4,13] icons[1,13] icons[0,13]
 		cost:8888 luck, 100 boondollars
-		req:egbert2, 5000 luck:earned
+		req:egbert1, 5000 luck:earned
 
-	*egbert4
+	*egbert3
 		name:D8 Egbert
 		desc:Dating the main character is sure to propel you into the spotlight.<//><b>Effect:</b><.>Gain 1 spotlight per minute.
 		icon:icons[5,5] icons[1,13]
 		on tick:yield 0.0167 spotlight
 		cost:413612 luck, 413 boondollars
-		req:egbert3, 300000 luck:earned
+		req:egbert2, 300000 luck:earned
 		//Note to self: make it so that instead of just giving you the spotlight, June shows up as a shiny you have to click for it. Maybe in addition?//
 
 	*aradiaBoost
